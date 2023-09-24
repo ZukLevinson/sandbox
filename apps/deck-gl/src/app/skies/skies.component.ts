@@ -59,6 +59,10 @@ export class SkiesComponent implements OnInit {
       getPosition: ({ lon, lat, alt }: Sattelite) => {
         return [lon, lat, alt];
       },
+      transitions: {
+        // transition with a duration of 3000ms
+        getSize: 3000,
+      },
     });
   }
 }
