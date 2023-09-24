@@ -1,0 +1,64 @@
+{
+  "name": "mock-sattelite-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mock-sattelite-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/mock-sattelite-server",
+        "main": "apps/mock-sattelite-server/src/main.ts",
+        "tsConfig": "apps/mock-sattelite-server/tsconfig.app.json",
+        "assets": ["apps/mock-sattelite-server/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/mock-sattelite-server/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "mock-sattelite-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mock-sattelite-server:build:development"
+        },
+        "production": {
+          "buildTarget": "mock-sattelite-server:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/mock-sattelite-server/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/mock-sattelite-server/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

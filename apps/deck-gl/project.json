@@ -1,22 +1,22 @@
 {
-  "name": "sandbox",
+  "name": "deck-gl",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "sandbox",
-  "sourceRoot": "apps/sandbox/src",
+  "sourceRoot": "apps/deck-gl/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/sandbox",
-        "index": "apps/sandbox/src/index.html",
-        "main": "apps/sandbox/src/main.ts",
+        "outputPath": "dist/apps/deck-gl",
+        "index": "apps/deck-gl/src/index.html",
+        "main": "apps/deck-gl/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/sandbox/tsconfig.app.json",
-        "assets": ["apps/sandbox/src/favicon.ico", "apps/sandbox/src/assets"],
-        "styles": ["apps/sandbox/src/styles.less"],
+        "tsConfig": "apps/deck-gl/tsconfig.app.json",
+        "assets": ["apps/deck-gl/src/favicon.ico", "apps/deck-gl/src/assets"],
+        "styles": ["apps/deck-gl/src/styles.less"],
         "scripts": []
       },
       "configurations": {
@@ -50,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "sandbox:build:production"
+          "browserTarget": "deck-gl:build:production"
         },
         "development": {
-          "browserTarget": "sandbox:build:development"
+          "browserTarget": "deck-gl:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -61,21 +61,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "sandbox:build"
+        "browserTarget": "deck-gl:build"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/sandbox/**/*.ts", "apps/sandbox/**/*.html"]
+        "lintFilePatterns": ["apps/deck-gl/**/*.ts", "apps/deck-gl/**/*.html"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/sandbox/jest.config.ts",
+        "jestConfig": "apps/deck-gl/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
