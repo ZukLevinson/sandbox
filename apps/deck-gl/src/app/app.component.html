@@ -1,15 +1,1 @@
-<div class="w-full h-full flex flex-col">
-  <header class="h-10 bg-slate-800"></header>
-  <div class="h-full w-full relative">
-    <canvas #canvas class="h-100 flex-1">
-      <sandbox-skies></sandbox-skies>
-    </canvas>
-  </div>
-  <menu>
-    
-  </menu>
-  <footer class="h-10 bg-slate-300"><div *ngFor="let sattelight of (flights$ | async)" (click)="onMove(sattelight)">
-  {{ sattelight.name }}
-</div>
-</footer>
-</div>
+<sandbox-nx-welcome></sandbox-nx-welcome> <router-outlet></router-outlet>
