@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'sandbox',
+  displayName: 'deck-gl',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/sandbox',
+  coverageDirectory: '../../coverage/apps/deck-gl',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
